@@ -93,3 +93,31 @@ def simCheck(slides):
   m = main(IOdir+".txt")
   print(m.overallInterestFactor())
 >>>>>>> 333dc4077b21b02b337ccc19680ba397b2382596
+
+
+def commonTags(photos):
+
+    sortedList = []
+    currentTuple = []
+    
+
+    for i in photos:
+        
+        for tagi in i.getTags():
+
+            wordTuples = []
+
+            for j in (photos - 1):
+                count = 0
+                for tagj in i.getTags():
+                    if tagj == tagi:
+                        count += 1
+                    else:
+                        next
+                if count == 0:
+                    next
+                else:
+                    currentTuple = (j, count)
+                    wordTuples.append(currentTuple)
+
+        sortedList.append(wordTuples)
