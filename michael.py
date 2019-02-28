@@ -1,5 +1,15 @@
 import math
 
+#t will be predetermined before
+#def tagHV():
+#  if slide is horizontal:
+#    L = x
+#  else:
+#    L = x + y
+#finding low, med, high values for number of tags in common
+
+
+
 def value(L,x):
   low = []
   med = []
@@ -26,3 +36,4 @@ def value(L,x):
       return med
   elif x == "high":
       return high
+
