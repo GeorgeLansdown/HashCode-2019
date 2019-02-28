@@ -66,10 +66,3 @@ class pic:
         return o
 
 
-#t will be predetermined before
-#def tagHV():
-#  if slide is horizontal:
-#    L = x
-#  else:
-#    L = x + y
-#finding low, med, high values for number of tags in common
