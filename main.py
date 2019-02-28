@@ -7,9 +7,16 @@ class main:
     collectionSize = 0
     pics = []
 
+    dir = ""
+    horizontal = 0
+    vertical = 0
+
     def __init__(self, dir):
         self.collectionSize = 0
         self.pics = []
+        self.dir = dir
+        self.horizontal = 0
+        self.vertical = 0
 
         with open(dir, "r") as all:
             file = all.read().split("\n")
@@ -20,6 +27,11 @@ class main:
                 n = f.split(" ")
 
                 p = pic(n[0], id)
+                if n[0] == "H":
+                    self.horizontal += 1
+                else:
+                    self.vertical += 1
+
                 id += 1
 
                 for g in n[2:]:
@@ -57,20 +69,14 @@ class main:
         for f in self.pics:
             print(f)
 
+    def output(self):
+        with open("out"+self.dir, "w+") as file:
+            file.write()
 
 
 if __name__ == "__main__":
   IOdir = input("File?")
   main(IOdir+".txt")
-
-
-
-
-
-
-
-
-
 
 #Splitting into horizontal and vertical
 def splitHV(pics):
@@ -88,7 +94,6 @@ def simCheck(slides):
   for s in range(0,len(slides)):
     if slides[s].similarTags(slides[s+1])==0:
       raise Exception("No similarity")
-
 
 def commonTags(photos):
 
@@ -116,3 +121,6 @@ def commonTags(photos):
                     wordTuples.append(currentTuple)
 
         sortedList.append(wordTuples)
+
+m = main(IOdir+".txt")
+
