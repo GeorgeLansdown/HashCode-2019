@@ -80,8 +80,9 @@ if __name__ == "__main__":
   m = main(IOdir+".txt")
   print(m.getSimilar())
 
+
 #Splitting into horizontal and vertical
-def splitHV(inputPics):
+def splitHV(inputPics):0
   horiz = []
   vert = []
   for f in inputPics:
@@ -89,6 +90,8 @@ def splitHV(inputPics):
       horiz.append(f)
     else:
       vert.append(f)
+
+    return (horiz, vert)
 
 #Assume slides are given as an array,
 #This takes the slides and checks no two adjacent slides have no similarity
@@ -118,3 +121,5 @@ def commonTags(photos):
                 wordTuples.append(currentTuple)
         
         sortedList.append(wordTuples)
+    
+    return sortedList
