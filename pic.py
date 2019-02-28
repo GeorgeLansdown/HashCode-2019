@@ -64,3 +64,5 @@ class pic:
         for f in self.tags:
             o+=" "+f
         return o
+
+
