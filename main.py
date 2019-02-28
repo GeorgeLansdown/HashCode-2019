@@ -1,3 +1,5 @@
+import math
+
 #hashcode 2019 George Lansdown Liana Ahmed Michael Aylesbury
 from pic import *
 
@@ -61,7 +63,6 @@ class main:
 
 if __name__ == "__main__":
   IOdir = input("File?")
-<<<<<<< HEAD
   main(IOdir+".txt")
 
 
@@ -89,7 +90,11 @@ def simCheck(slides):
   for s in range(0,len(slides)):
     if slides[s].similarTags(slides[s+1])==0:
       raise Exception("No similarity")
-=======
-  m = main(IOdir+".txt")
-  print(m.overallInterestFactor())
->>>>>>> 333dc4077b21b02b337ccc19680ba397b2382596
+
+#t will be predetermined before
+#def tagHV():
+#  if slide is horizontal:
+#    L = x
+#  else:
+#    L = x + y
+#finding low, med, high values for number of tags in common
