@@ -31,3 +31,29 @@ def printAll():
 if __name__ == "__main__":
   IOdir = input("File?")
   main(IOdir+".txt")
+
+
+
+
+
+
+
+
+
+
+#Splitting into horizontal and vertical
+def splitHV(pics):
+  horiz = []
+  vert = []
+  for f in pics:
+    if f.getOrientation() == 'H':
+      horiz.append(f)
+    else:
+      vert.append(f)
+
+#Assume slides are given as an array,
+#This takes the slides and checks no two adjacent slides have no similarity
+def simCheck(slides):
+  for s in range(0,len(slides)):
+    if slides[s].similarTags(slides[s+1])==0:
+      raise Exception("No similarity")
