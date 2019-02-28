@@ -107,13 +107,6 @@ def simCheck(slides):
     if slides[s].similarTags(slides[s+1])==0:
       raise Exception("No similarity")
 
-<<<<<<< HEAD
-
-if __name__ == "__main__":
-  IOdir = input("File?")
-  m = main(IOdir+".txt")
-  m.output(m.getinputPics())
-=======
 def commonTags(photos):
 
     sortedList = []
@@ -121,20 +114,24 @@ def commonTags(photos):
 
 
     for i in photos:
-        
+
         wordTuples = []
-        
+
         for j in range(1, len(photos)):
-            
+
             count = i.getSimilar(photos[j])
-                
+
             if count == 0:
                 next
             else:
                 currentTuple = (j, count)
                 wordTuples.append(currentTuple)
-        
+
         sortedList.append(wordTuples)
-    
+
     return sortedList
->>>>>>> 68e397aadf0ca0c3e14c710083e40703fc4650af
+
+if __name__ == "__main__":
+  IOdir = input("File?")
+  m = main(IOdir+".txt")
+  m.output(m.getinputPics())
