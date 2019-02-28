@@ -6,4 +6,5 @@ def main(dir):
   file = open(dir, "r")
 
 if __name__ == "__main__":
-  main("input.txt")
+  IOdir = input("File?")
+  main(IOdir)
