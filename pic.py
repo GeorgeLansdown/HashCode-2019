@@ -11,6 +11,16 @@ class pic:
         self.tags = []
         self.numberOfTags = 0
 
+    def similarTags(self, otherPic):
+        similar = []
+
+        otherTags = otherPic.getTags()
+        for f in otherTags:
+            if f in self.tags:
+                similar.append(f)
+
+        return similar
+
     def getID(self):
         return self.ID
 
