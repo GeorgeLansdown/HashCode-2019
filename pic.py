@@ -13,7 +13,7 @@ class pic:
 
     def joinWith(self, otherPic):
         if self.getOrientation() == "V" and otherPic.getOrientation() == "V":
-            newID = self.getID() + " " + otherPic.getID()
+            newID = str(self.getID()) + " " + str(otherPic.getID())
             newTags = self.getTags() + otherPic.getTags()
 
             newPic = pic("V", newID)

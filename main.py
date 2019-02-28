@@ -27,7 +27,7 @@ class main:
             for f in file[1:-1]:
                 n = f.split(" ")
 
-                p = pic(n[0], id)
+                p = pic(n[0], str(id))
                 if n[0] == "H":
                     self.horizontal += 1
                 else:
@@ -71,14 +71,21 @@ class main:
             print(f)
 
     def output(self, inputPics):
+        slidesNumber = int(self.horizontal+(self.vertical/2))
+
         with open("out"+self.dir, "w+") as file:
-            file.write()
-
-
-if __name__ == "__main__":
-  IOdir = input("File?")
-  m = main(IOdir+".txt")
-  print(m.getSimilar())
+            file.write(str(slidesNumber)+"\n")
+            otherPic = pic("H", "-1")
+            for f in inputPics:
+                if f.getOrientation() == "H":
+                    file.write(str(f.getID())+"\n")
+                else:
+                    if otherPic.getOrientation() == "H":
+                        otherPic = f
+                    else:
+                        otherPic = f.joinWith(otherPic)
+                        file.write(str(otherPic.getID())+"\n")
+                        otherPic = pic("H", "-1")
 
 #Splitting into horizontal and vertical
 def splitHV(inputPics):
@@ -97,29 +104,8 @@ def simCheck(slides):
     if slides[s].similarTags(slides[s+1])==0:
       raise Exception("No similarity")
 
-# def commonTags(photos):
-#
-#     sortedList = []
-#     currentTuple = []
-#
-#
-#     for i in photos:
-#
-#         for tagi in i.getTags():
-        #
-        #     wordTuples = []
-        #
-        #     for j in range(0, len(photos)):
-        #         count = 0
-        #         for tagj in j.getTags():
-        #             if tagj == tagi:
-        #                 count += 1
-        #             else:
-        #                 next()
-        #         if count == 0:
-        #             next
-        #         else:
-        #             currentTuple = (j, count)
-        #             wordTuples.append(currentTuple)
-        #
-        # sortedList.append(wordTuples)
+
+if __name__ == "__main__":
+  IOdir = input("File?")
+  m = main(IOdir+".txt")
+  m.output(m.getinputPics())
