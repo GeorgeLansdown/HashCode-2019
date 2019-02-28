@@ -78,15 +78,6 @@ if __name__ == "__main__":
   IOdir = input("File?")
   main(IOdir+".txt")
 
-
-
-
-
-
-
-
-
-
 #Splitting into horizontal and vertical
 def splitHV(pics):
   horiz = []
@@ -103,3 +94,36 @@ def simCheck(slides):
   for s in range(0,len(slides)):
     if slides[s].similarTags(slides[s+1])==0:
       raise Exception("No similarity")
+<<<<<<< HEAD
+=======
+
+def commonTags(photos):
+
+    sortedList = []
+    currentTuple = []
+    
+
+    for i in photos:
+        
+        for tagi in i.getTags():
+
+            wordTuples = []
+
+            for j in (photos - 1):
+                count = 0
+                for tagj in i.getTags():
+                    if tagj == tagi:
+                        count += 1
+                    else:
+                        next
+                if count == 0:
+                    next
+                else:
+                    currentTuple = (j, count)
+                    wordTuples.append(currentTuple)
+
+        sortedList.append(wordTuples)
+
+m = main(IOdir+".txt")
+
+>>>>>>> aa89f72fcec5fbbf84576f34944fe0e3286cd5af
