@@ -1,33 +1,43 @@
 #hashcode 2019 George Lansdown Liana Ahmed Michael Aylesbury
 from pic import *
 
-collectionSize = 0
-pics = []
 
-def main(dir):
-  with open(dir, "r") as all:
-      file = all.read()
+class main:
 
-      collectionSize = file[0]
-      id = 0
+    collectionSize = 0
+    pics = []
 
-      for f in file[1:]:
-          print(f)
+    def __init__(self, dir):
+        self.collectionSize = 0
+        self.pics = []
 
-          n = f.split(" ")
+        with open(dir, "r") as all:
+            file = all.read().split("\n")
+            self.collectionSize = int(file[0])
+            id = 0
 
-          p = pic(n[0], id)
-          id += 1
+            for f in file[1:-1]:
+                n = f.split(" ")
 
-          for g in n[2:]:
-              p.addTag(g)
+                p = pic(n[0], id)
+                id += 1
 
+                for g in n[2:]:
+                    p.addTag(g)
+                self.pics.append(p)
 
-def printAll():
-    print("collectionSize = "+collectionSize)
-    for f in pics:
-        print(f)
+    def getCollectionSize(self):
+        return self.collectionSize
+
+    def getPics(self):
+        return self.pics
+
+    def printAll(self):
+        print(self.collectionSize)
+        for f in self.pics:
+            print(f)
+
 
 if __name__ == "__main__":
   IOdir = input("File?")
-  main(IOdir+".txt")
+  m = main(IOdir+".txt")

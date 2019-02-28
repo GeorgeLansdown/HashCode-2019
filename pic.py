@@ -1,6 +1,6 @@
 class pic:
     orientation = ""
-    ID = ""
+    ID = 0
     tags = []
     numberOfTags = 0
 
@@ -8,6 +8,8 @@ class pic:
     def __init__(self, orientation, ID):
         self.setID(ID)
         self.setOrientation(orientation)
+        self.tags = []
+        self.numberOfTags = 0
 
     def getID(self):
         return self.ID
@@ -35,6 +37,7 @@ class pic:
         return self.numberOfTags
 
     def __str__(self):
-        o = orientation+" "+self.numberOfTags
+        o = self.orientation+" "+str(self.numberOfTags)
         for f in self.tags:
             o+=" "+f
+        return o
